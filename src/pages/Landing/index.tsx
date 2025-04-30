@@ -6,13 +6,8 @@ export const Landing = () => {
   return (
     <>
       <EntryText />
-<<<<<<< HEAD
       <Slider />
       <MenuPicker />
-=======
-      <MenuPicker />
-      {/* <Slider /> */}
->>>>>>> 8a065d08538ebdbd1e4099b37eb054578c890b6c
     </>
   );
 };

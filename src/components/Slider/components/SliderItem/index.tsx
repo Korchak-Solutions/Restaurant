@@ -12,7 +12,7 @@ const classNames = [
   ' next',
   ' afterNext',
 ];
-const Icons: Record<MenuCategories, React.FC<IconBaseProps>> = {
+export const CategoryIcons: Record<MenuCategories, React.FC<IconBaseProps>> = {
   Burger: PiHamburgerFill,
   Pizza: GiFullPizza,
   Steak: GiSteak,
@@ -36,7 +36,7 @@ export const SliderItem = ({
       : currentIndex >= length - 2 && index <= 1 - (length - 1 - currentIndex)
       ? classNames[index + 3 + (length - 1 - currentIndex)]
       : '');
-  const Icon = Icons[category];
+  const Icon = CategoryIcons[category];
   return (
     <div className={className}>
       <div className="icon-container">
