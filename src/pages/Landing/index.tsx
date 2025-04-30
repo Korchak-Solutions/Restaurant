@@ -6,8 +6,8 @@ export const Landing = () => {
   return (
     <>
       <EntryText />
-      <MenuPicker />
       <Slider />
+      <MenuPicker />
     </>
   );
 };

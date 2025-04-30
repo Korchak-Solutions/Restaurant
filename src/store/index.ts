@@ -155,11 +155,12 @@ export const useSliderStore = create<SliderStoreState>(set => ({
   indexSetters: {
     nextIndex: () =>
       set(state => ({
-        index: (state.index + 1) % 13, // state.featured.length
+        index: (state.index + 1) % state.featured.length,
       })),
     prevIndex: () =>
       set(state => ({
-        index: (state.index - 1 + 13) % 13,
+        index:
+          (state.index - 1 + state.featured.length) % state.featured.length,
       })),
   },
 }));

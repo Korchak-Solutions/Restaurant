@@ -2,7 +2,24 @@
     width: '100%';
     position: relative;
     height: 500px;
-    display: flex;
-    flex-direction: row;
+    margin-bottom: 50px;
     gap: 100px;
+}
+
+.section-header{
+    font-size: 60px;
+    line-height: 60px;
+    position: relative;
+    margin: 20px;
+    margin-bottom: 35px;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        right: calc(50% - 125px);
+        width: 250px;
+        border-radius: 30px;
+        height: 5px;
+        background-color: #FFD40D;
+    }
 }

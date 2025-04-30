@@ -1,4 +1,8 @@
-import {useSliderStore} from '../../../../store';
+import {IconBaseProps} from 'react-icons';
+import {GiFullPizza, GiSteak} from 'react-icons/gi';
+import {PiHamburgerFill} from 'react-icons/pi';
+import {RiCake3Fill, RiDrinks2Fill} from 'react-icons/ri';
+import {FoodItemDto, MenuCategories, useSliderStore} from '../../../../store';
 import './styles.scss';
 
 const classNames = [
@@ -8,18 +12,20 @@ const classNames = [
   ' next',
   ' afterNext',
 ];
-
+const Icons: Record<MenuCategories, React.FC<IconBaseProps>> = {
+  Burger: PiHamburgerFill,
+  Pizza: GiFullPizza,
+  Steak: GiSteak,
+  Dessert: RiCake3Fill,
+  Drink: RiDrinks2Fill,
+};
 export const SliderItem = ({
-  color,
   title,
+  price,
   index,
+  category,
   length,
-}: {
-  color: string;
-  title: string;
-  index: number;
-  length: number;
-}) => {
+}: FoodItemDto & {index: number; length: number}) => {
   const currentIndex = useSliderStore(state => state.index);
   const className =
     'block' +
@@ -30,10 +36,20 @@ export const SliderItem = ({
       : currentIndex >= length - 2 && index <= 1 - (length - 1 - currentIndex)
       ? classNames[index + 3 + (length - 1 - currentIndex)]
       : '');
-
+  const Icon = Icons[category];
   return (
-    <div className={className} style={{background: color}}>
-      {title}
+    <div className={className}>
+      <div className="icon-container">
+        <Icon fill="#FFD40D" style={{height: 100, width: 100, zIndex: 2}} />
+        <div className="rectangle" />
+      </div>
+      <div className="text-section">
+        {title}
+        <div className="price-label">
+          <div className="dollar-sign">$</div>
+          {price.toFixed(2)}
+        </div>
+      </div>
     </div>
   );
 };
