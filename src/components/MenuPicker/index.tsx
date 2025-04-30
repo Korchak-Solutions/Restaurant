@@ -7,7 +7,7 @@ export const MenuPicker = () => {
   const menuData = useMenuStore(state => state.menu);
 
   const [currentCategory, setCurrentCategory] =
-    useState<MenuCategories>('Drink');
+    useState<MenuCategories>('Steak');
 
   const currentData: FoodItemDto[] | undefined = menuData[currentCategory];
 
