@@ -7,7 +7,7 @@ export const Landing = () => {
     <>
       <EntryText />
       <MenuPicker />
-      <Slider />
+      {/* <Slider /> */}
     </>
   );
 };
