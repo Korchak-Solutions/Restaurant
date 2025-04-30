@@ -1,0 +1,40 @@
+.block{
+    opacity: 0;
+    height: 250px;
+    width: 250px;
+    right: calc(50% - 125px);
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    position: absolute;
+    transition: all 0.3s ease-in;
+    }
+    
+.block.previous{
+        transform: translate(-250px, 100px) rotateZ(-35deg);
+        opacity: 1;
+        z-index: 1;
+}
+    
+    .block.beforePrevious{
+        transform: translate(-300px, 300px) rotateZ(-70deg);
+        opacity: 0;
+        z-index: 0;
+    }
+    
+    .block.current{
+        opacity: 1;
+        z-index: 2;
+    }
+    
+    .block.next{
+        transform: translate(250px, 100px) rotateZ(35deg);
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .block.afterNext{
+        transform: translate(300px, 300px) rotateZ(70deg);
+        opacity: 0;
+        z-index: 0;
+    }

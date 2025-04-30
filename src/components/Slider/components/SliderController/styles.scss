@@ -1,0 +1,26 @@
+.slider-button{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: #F3274C;
+    transition: opacity 0.1s ease;
+    &.reverse{
+        transform: rotateZ(180deg);
+    }
+
+    &:active{
+        opacity: 0.7;
+    }
+}
+
+.slider-controller{
+    position: absolute;
+    display: flex;
+    z-index: 3;
+    gap: 280px;
+    top: 125px;
+    right: calc(50% - 170px);
+}

@@ -135,7 +135,31 @@ const featured: FoodItemDto[] = Object.values(initialMenuState)
 
 // in component:
 // const data = useStore((state) => state.menu)
-export const useStore = create(() => ({
+interface MenuStoreState {
+  menu: MenuDto;
+}
+
+export const useMenuStore = create<MenuStoreState>(() => ({
   menu: initialMenuState,
+}));
+
+interface SliderStoreState {
+  index: number;
+  featured: FoodItemDto[];
+  indexSetters: {nextIndex: () => void; prevIndex: () => void};
+}
+
+export const useSliderStore = create<SliderStoreState>(set => ({
+  index: 0,
   featured,
+  indexSetters: {
+    nextIndex: () =>
+      set(state => ({
+        index: (state.index + 1) % 13, // state.featured.length
+      })),
+    prevIndex: () =>
+      set(state => ({
+        index: (state.index - 1 + 13) % 13,
+      })),
+  },
 }));
