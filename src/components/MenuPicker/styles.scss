@@ -1,0 +1,86 @@
+@use '../../themeColors' as *;
+
+.menu-picker-wrapper {
+    min-height: 80vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    // background-color: red;
+    margin: 0 auto;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-picker-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 70%;
+    background-color: $light-gray;
+    padding-top: 5rem;
+    justify-self: flex-end;
+    border-radius: 30px;
+    min-height: 400px;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.menu-picker-image {
+    width: 400px;
+    position: absolute;
+    left: 0;
+}
+
+.menu-picker-active-category {
+    font-size: 25px;
+    color: black;
+    font-weight: 800;
+    align-self: flex-start;
+    margin-bottom: 1.4rem;
+}
+
+.menu-items-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    // background-color: red;
+    margin-right: 4rem;
+    min-width: 60%;
+}
+
+.menu-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.menu-list-item {
+    text-align: left;
+    h3 {
+        font-weight: 800;
+        font-size: 16px;
+    }
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-list-item-info { 
+    display: flex;
+    flex-direction: column;
+    gap: 0.32rem;
+}
+
+.ingredients {
+    color: $gray;
+}
+
+.price {
+    color: $red;
+    font-weight: 700;
+}
+
+.horizontal-line {
+    height: 1px;
+    min-width: 70%;
+    // background-color: black;
+    border-top: 1px dashed black;
+}
